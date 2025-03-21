@@ -4,10 +4,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import { rainy, summer, Winter, bright_day } from "../utils/constants";
+import Shimmer from "./shimmer";
 
 const Data = ({ wetData }) => {
   if (!wetData) {
-    return <h2>Loading...</h2>; // Display a loading message until data is available
+    return <Shimmer />; // Display a loading message until data is available
   }
   const { temp_min, temp, feels_like, temp_max, humidity } = wetData.main;
   const { description } = wetData.weather[0];
